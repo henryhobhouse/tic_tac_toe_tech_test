@@ -1,0 +1,22 @@
+{
+  "name": "tic_tac_toe_tech_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henryhobhouse/tic_tac_toe_tech_test.git"
+  },
+  "author": "Henry Hobhouse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henryhobhouse/tic_tac_toe_tech_test/issues"
+  },
+  "homepage": "https://github.com/henryhobhouse/tic_tac_toe_tech_test#readme",
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
