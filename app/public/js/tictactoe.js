@@ -15,13 +15,13 @@ TicTacToe.prototype.board = function() {
 };
 
 // Controls player turn
-TicTacToe.prototype.turn = function() {
+TicTacToe.prototype.onclick = function() {
 
 };
 
 // Changes player go
 TicTacToe.prototype.swap_player = function() {
-
+  this.xIsNext = this.xIsNext == true ? false : true;
 };
 
 // manipulates state of square
