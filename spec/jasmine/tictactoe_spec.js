@@ -18,4 +18,9 @@ describe("TicTacToe", function() {
   it('Each square has a instance vairbable, state, set as null', function() {
     expect(ttt.squares[0].state).toEqual(null);
   });
+
+  it('swap players changes xIsTrue', function() {
+    ttt.swap_player();
+    expect(ttt.xIsNext).toEqual(false);
+  });
 });
