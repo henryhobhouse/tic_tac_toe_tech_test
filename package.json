@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/henryhobhouse/tic_tac_toe_tech_test#readme",
   "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-plugin-import": "^2.3.0",
     "jasmine": "^2.6.0"
   }
 }
