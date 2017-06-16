@@ -8,14 +8,13 @@ function TicTacToe () {
 
 TicTacToe.prototype.board = function() {
   for (let i = 0; i < 9; i++) {
-    // var sqr = new this.square();
     this.squares.push(null);
   }
 };
 
 // Controls player turn
-TicTacToe.prototype.on_click = function() {
-
+TicTacToe.prototype.play_turn = function(sqr) {
+  
 };
 
 // Changes player go
@@ -24,8 +23,8 @@ TicTacToe.prototype.swap_player = function() {
 };
 
 // manipulates state of square
-TicTacToe.prototype.change_state = function() {
-
+TicTacToe.prototype.change_state = function(sqr) {
+  this.squares[sqr] = this.xIsNext === true ? 'X' : 'O';
 };
 
 // checks if winning combination of turns has occured
