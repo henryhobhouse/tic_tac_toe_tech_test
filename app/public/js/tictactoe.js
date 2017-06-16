@@ -14,13 +14,13 @@ TicTacToe.prototype.board = function() {
   }
 };
 
-// Changes player go
-TicTacToe.prototype.swap_player = function() {
+// Controls player turn
+TicTacToe.prototype.turn = function() {
 
 };
 
-// Controls player turn
-TicTacToe.prototype.turn = function() {
+// Changes player go
+TicTacToe.prototype.swap_player = function() {
 
 };
 
@@ -37,3 +37,5 @@ TicTacToe.prototype.check_winner = function() {
 TicTacToe.prototype.square = function() {
   this.state = null;
 };
+
+module.exports = TicTacToe;
