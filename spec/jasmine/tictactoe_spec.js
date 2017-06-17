@@ -63,5 +63,11 @@ describe("TicTacToe", function() {
       ttt.change_state(square_test);
       expect(ttt.squares[2]).toEqual('O');
     });
+
+    it('play turn changes state of choosen square and swaps player', function() {
+      ttt.play_turn(2);
+      expect(ttt.squares[2]).toEqual('X');
+      expect(ttt.xIsNext).toBeFalsy();
+    })
   });
 });

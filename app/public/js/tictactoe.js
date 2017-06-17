@@ -14,7 +14,10 @@ TicTacToe.prototype.board = function() {
 
 // Controls player turn
 TicTacToe.prototype.play_turn = function(sqr) {
-  
+  this.change_state(sqr);
+  this.winner = this.check_winner();
+  if (this.winner !== null) return;
+  this.swap_player();
 };
 
 // Changes player go
