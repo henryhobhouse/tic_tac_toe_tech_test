@@ -7,7 +7,7 @@ function TicTacToe () {
   this.board();
 }
 
-// Creates array of objects intpreted as playing board
+// Creates array of objects interpreted as playing board
 TicTacToe.prototype.board = function() {
   for (let i = 0; i < 9; i++) {
     this.squares.push(null);

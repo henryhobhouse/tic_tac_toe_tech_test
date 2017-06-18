@@ -5,8 +5,6 @@ const app = express();
 
 const port = 3000;
 
-const root = './app/';
-
 app.use(express.static(path.join(__dirname, './app/public')));
 
 app.get('/', function(req, res) {
