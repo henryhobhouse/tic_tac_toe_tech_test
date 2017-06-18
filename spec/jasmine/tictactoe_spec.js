@@ -1,10 +1,12 @@
+var rewire = require("rewire");
+
 describe("TicTacToe", function() {
-  var TicTacToe = require('../../app/public/js/tictactoe.js');
-  var TicTacToe;
+  var app = rewire('../../app/public/js/tictactoe.js');
 
   describe('Post initialization', function() {
     beforeEach(function() {
-      ttt = new TicTacToe();
+      TicTacToe = app.__get__('TicTacToe');
+      ttt = new TicTacToe
     });
 
     it('It initializes on xIsNext as ture', function () {

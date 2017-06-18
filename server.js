@@ -11,9 +11,6 @@ app.get('/', function(req, res) {
   res.sendFile('app/views/index.html', { root : __dirname });
 });
 
-module.exports = app;
-if (!module.parent) {
-  app.listen(port, function() {
-    console.log('Server started on port '+ port)
-  });
-}
+app.listen(port, function() {
+  console.log('Server started on port '+ port)
+});

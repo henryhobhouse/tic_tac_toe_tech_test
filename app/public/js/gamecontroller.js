@@ -1,5 +1,4 @@
 var tictactoe = new TicTacToe;
-
 // Checks to see if window fully loads before calling ready function
 function ready(fn) {
   if (document.readyState != 'loading'){
@@ -30,7 +29,7 @@ function squaresOnLoad(squares) {
 
 // displays game status and is called after each click
 function displayStatus() {
-  var status = document.getElementById('status');
+  var status = document.querySelector('.status');
   if (tictactoe.winner === null) {
     status.innerHTML= 'CURRENT PLAYER IS: ' + (tictactoe.xIsNext ? 'X' : 'O');
   } else {
