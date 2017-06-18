@@ -1,5 +1,5 @@
 body {
-  font: 14px "Roboto";
+  font: 14px "Arial";
   margin: 50px;
   align-content: center;
 }
@@ -13,18 +13,16 @@ body {
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  border: 2px solid #999;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   height: 34px;
-  margin-top: -4px;
-  margin-left: -1px;
-  padding: 0;
-  text-align: center;
   width: 34px;
+  margin-top: -4px;
+  margin-left: -2px;
+  text-align: center;
 }
 
 .square:focus {
