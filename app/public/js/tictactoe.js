@@ -3,9 +3,11 @@
 function TicTacToe () {
   this.xIsNext = true;
   this.squares = [];
+  this.winner = null;
   this.board();
 }
 
+// Creates array of objects intpreted as playing board
 TicTacToe.prototype.board = function() {
   for (let i = 0; i < 9; i++) {
     this.squares.push(null);
@@ -14,9 +16,9 @@ TicTacToe.prototype.board = function() {
 
 // Controls player turn
 TicTacToe.prototype.play_turn = function(sqr) {
+  if (this.squares[sqr] !== null || this.winner !== null) return;
   this.change_state(sqr);
   this.winner = this.check_winner();
-  if (this.winner !== null) return;
   this.swap_player();
 };
 
@@ -25,12 +27,12 @@ TicTacToe.prototype.swap_player = function() {
   this.xIsNext = this.xIsNext === true ? false : true;
 };
 
-// manipulates state of square
+// updates state of square
 TicTacToe.prototype.change_state = function(sqr) {
   this.squares[sqr] = this.xIsNext === true ? 'X' : 'O';
 };
 
-// checks if winning combination of turns has occured
+// checks if winning combination of moves has occured
 TicTacToe.prototype.check_winner = function() {
   var win_comb = [
     [0,1,2],
@@ -52,5 +54,3 @@ TicTacToe.prototype.check_winner = function() {
   }
   return null;
 };
-
-module.exports = TicTacToe;

@@ -3,16 +3,20 @@ body {
   margin: 50px;
 }
 
-.board-row:after {
-  clear: both;
+.board {
+  width : 100%;
+}
+
+.row:after {
   content: "";
   display: table;
+  clear: both;
 }
 
 .square {
   background: #fff;
   border: 1px solid #999;
-  float: left;
+  float: center;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
@@ -26,4 +30,8 @@ body {
 
 .square:focus {
   outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
 }
