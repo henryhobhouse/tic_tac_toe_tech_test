@@ -33,6 +33,6 @@ function displayStatus() {
   if (tictactoe.winner === null) {
     status.innerHTML= 'CURRENT PLAYER IS: ' + (tictactoe.xIsNext ? 'X' : 'O');
   } else {
-    status.innerHTML= 'WINNER IS: ' + tictactoe.winner;
+    status.innerHTML= 'GAME OVER. WINNER IS: ' + tictactoe.winner;
   }
 }
