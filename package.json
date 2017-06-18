@@ -22,8 +22,6 @@
     "express": "^4.15.3",
     "growl": "^1.9.2",
     "jasmine-node": "^1.14.5",
-    "nightwatch": "^0.9.16",
     "rewire": "^2.5.2",
-    "selenium-webdriver": "^3.4.0"
   }
 }
