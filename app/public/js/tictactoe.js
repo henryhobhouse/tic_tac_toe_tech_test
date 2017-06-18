@@ -54,3 +54,5 @@ TicTacToe.prototype.check_winner = function() {
   }
   return null;
 };
+
+module.exports = TicTacToe;
