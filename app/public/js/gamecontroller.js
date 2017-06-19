@@ -1,4 +1,7 @@
+'use strict';
+
 var tictactoe = new TicTacToe;
+
 // Checks to see if window fully loads before calling ready function
 function ready(fn) {
   if (document.readyState != 'loading'){
