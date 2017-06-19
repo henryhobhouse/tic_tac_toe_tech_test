@@ -22,6 +22,6 @@
     "express": "^4.15.3",
     "growl": "^1.9.2",
     "jasmine-node": "^1.14.5",
-    "rewire": "^2.5.2",
+    "rewire": "^2.5.2"
   }
 }
