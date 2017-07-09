@@ -21,7 +21,7 @@ function squaresOnLoad(squares) {
     element.addEventListener('click', function(evt) {
       var squareId = evt.target.dataset.id;
       tictactoe.play_turn(squareId);
-      squares[squareId].innerHTML = tictactoe.squares[squareId];
+      squares[squareId].innerHTML = tictactoe.board.squares[squareId];
       displayStatus();
     });
   });

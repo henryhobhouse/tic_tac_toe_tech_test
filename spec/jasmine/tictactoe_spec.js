@@ -1,11 +1,13 @@
 var rewire = require("rewire");
 
 describe("TicTacToe", function() {
-  var app = rewire('../../app/public/js/tictactoe.js');
+  var tictactoe = rewire('../../app/public/js/tictactoe.js');
+  var board = rewire('../../app/public/js/board.js');
 
   describe('Post initialization', function() {
     beforeEach(function() {
-      TicTacToe = app.__get__('TicTacToe');
+      TicTacToe = tictactoe.__get__('TicTacToe');
+      Board = board.__get__('Board');
       ttt = new TicTacToe
     });
 
