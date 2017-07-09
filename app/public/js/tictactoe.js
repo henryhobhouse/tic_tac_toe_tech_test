@@ -26,7 +26,7 @@ TicTacToe.prototype.change_state = function(sqr) {
 
 // checks if winning combination of moves has occured
 TicTacToe.prototype.check_winner = function() {
-  var win_comb = [
+  var WIN_COMB = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -36,8 +36,8 @@ TicTacToe.prototype.check_winner = function() {
     [0,4,8],
     [6,4,2]
   ];
-  for (let i = 0; i < win_comb.length; i++) {
-    var [a, b, c] = win_comb[i];
+  for (let i = 0; i < WIN_COMB.length; i++) {
+    var [a, b, c] = WIN_COMB[i];
     if(this.board.squares[a] === this.board.squares[b] &&
        this.board.squares[c] === this.board.squares[b] &&
        this.board.squares[a] !== null) {
