@@ -1,4 +1,7 @@
-var tictactoe = new TicTacToe;
+'use strict';
+
+var tictactoe = new TicTacToe();
+
 // Checks to see if window fully loads before calling ready function
 function ready(fn) {
   if (document.readyState != 'loading'){
@@ -31,8 +34,8 @@ function squaresOnLoad(squares) {
 function displayStatus() {
   var status = document.querySelector('.status');
   if (tictactoe.winner === null) {
-    status.innerHTML= 'CURRENT PLAYER IS: ' + (tictactoe.xIsNext ? 'X' : 'O');
+    status.innerHTML = 'CURRENT PLAYER IS: ' + (tictactoe.xIsNext ? 'X' : 'O');
   } else {
-    status.innerHTML= 'GAME OVER. WINNER IS: ' + tictactoe.winner;
+    status.innerHTML = 'GAME OVER. WINNER IS: ' + tictactoe.winner;
   }
 }
