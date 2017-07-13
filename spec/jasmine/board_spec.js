@@ -1,11 +1,11 @@
 var rewire = require("rewire");
 
-describe("TicTacToe", function() {
-  var tttboard = rewire('../../app/public/js/board.js');
+describe("Board", function() {
+  var ttt_board = rewire('../../app/public/js/board.js');
 
   describe('Post initialization', function() {
     beforeEach(function() {
-      Board = tttboard.__get__('Board');
+      Board = ttt_board.__get__('Board');
       board = new Board
     });
 

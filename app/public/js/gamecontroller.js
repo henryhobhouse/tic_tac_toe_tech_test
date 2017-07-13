@@ -22,9 +22,9 @@ ready(function() {
 function squaresOnLoad(squares) {
   squares.forEach(function(element) {
     element.addEventListener('click', function(evt) {
-      var squareId = evt.target.dataset.id;
-      tictactoe.play_turn(squareId);
-      squares[squareId].innerHTML = tictactoe.board.squares[squareId];
+      var square_id = evt.target.dataset.id;
+      tictactoe.playTurn(square_id);
+      squares[square_id].innerHTML = tictactoe.board.squares[square_id];
       displayStatus();
     });
   });

@@ -1,48 +1,32 @@
 'use strict';
 
+// game logic controller for tic tac toe
 function TicTacToe () {
   this.xIsNext = true;
   this.winner = null;
   this.board = new Board();
+  this.winCombo = new WinCombo();
 }
 
 // Controls player turn
-TicTacToe.prototype.play_turn = function(sqr) {
-  if (this.board.squares[sqr] !== null || this.winner !== null) return;
-  this.change_state(sqr);
-  this.winner = this.check_winner();
-  this.swap_player();
+TicTacToe.prototype.playTurn = function(sqr) {
+  if (this.isFinished(sqr)) return;
+  this.changeState(sqr);
+  this.winner = this.winCombo.check(this.board.squares);
+  this.swapPlayer();
 };
 
 // Changes player go
-TicTacToe.prototype.swap_player = function() {
+TicTacToe.prototype.swapPlayer = function() {
   this.xIsNext = this.xIsNext === true ? false : true;
 };
 
 // updates state of square
-TicTacToe.prototype.change_state = function(sqr) {
+TicTacToe.prototype.changeState = function(sqr) {
   this.board.squares[sqr] = this.xIsNext === true ? 'X' : 'O';
 };
 
-// checks if winning combination of moves has occured
-TicTacToe.prototype.check_winner = function() {
-  var WIN_COMB = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [6,4,2]
-  ];
-  for (let i = 0; i < WIN_COMB.length; i++) {
-    var [a, b, c] = WIN_COMB[i];
-    if(this.board.squares[a] === this.board.squares[b] &&
-       this.board.squares[c] === this.board.squares[b] &&
-       this.board.squares[a] !== null) {
-      return this.board.squares[a];
-    }
-  }
-  return null;
+// checks if game finished
+TicTacToe.prototype.isFinished = function(sqr) {
+  return this.board.squares[sqr] !== null || this.winner !== null;
 };
