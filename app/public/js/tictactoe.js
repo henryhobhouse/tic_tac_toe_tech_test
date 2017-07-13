@@ -10,7 +10,7 @@ function TicTacToe () {
 
 // Controls player turn
 TicTacToe.prototype.playTurn = function(sqr) {
-  if (this.isFinished(sqr)) return;
+  if (this.turnAvailable(sqr)) return;
   this.changeState(sqr);
   this.winner = this.winCombo.check(this.board.squares);
   this.swapPlayer();
@@ -27,6 +27,6 @@ TicTacToe.prototype.changeState = function(sqr) {
 };
 
 // checks if game finished
-TicTacToe.prototype.isFinished = function(sqr) {
+TicTacToe.prototype.turnAvailable = function(sqr) {
   return this.board.squares[sqr] !== null || this.winner !== null;
 };
