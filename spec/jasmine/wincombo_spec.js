@@ -1,13 +1,17 @@
 var rewire = require("rewire");
 
 describe("WinCobo", function() {
-  var ttt_win_combo = rewire('../../app/public/js/wincombo.js');
+  var wincomboModule = rewire('../../app/public/js/wincombo.js');
 
   describe('Post initialization', function() {
+    var WinCombo;
+    var winCombo;
+    var squares;
+
     beforeEach(function() {
-      WinCombo = ttt_win_combo.__get__('WinCombo');
+      WinCombo = wincomboModule.__get__('WinCombo');
       winCombo = new WinCombo
-      squares = [null,null,null,null,null,null,null,null,null];
+      squares = new Array(9).fill(null);
     });
 
     it('returns winner horizontal line', function() {

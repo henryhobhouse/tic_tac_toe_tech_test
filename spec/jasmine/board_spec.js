@@ -1,11 +1,14 @@
 var rewire = require("rewire");
 
 describe("Board", function() {
-  var ttt_board = rewire('../../app/public/js/board.js');
+  var boardModule = rewire('../../app/public/js/board.js');
 
   describe('Post initialization', function() {
+    var Board;
+    var board;
+
     beforeEach(function() {
-      Board = ttt_board.__get__('Board');
+      Board = boardModule.__get__('Board');
       board = new Board
     });
 
@@ -16,6 +19,16 @@ describe("Board", function() {
     it('Each array value is set to null on initialization', function() {
       const ary = new Array(9).fill(null);
       expect(board.squares).toEqual(ary);
+    });
+
+    it('getSquare method will return correct square', function() {
+      board.squares[3] = 'gettest';
+      expect(board.getSquare(3)).toEqual('gettest');
+    });
+
+    it('updateSquare method will update correct square', function() {
+      board.updateSquare(5, 'updatetest')
+      expect(board.squares[5]).toEqual('updatetest');
     });
   });
 });

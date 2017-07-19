@@ -24,8 +24,4 @@ Tests can be run by navigating to the root of the app using terminal/console. Ru
 
 ## Notes on functionality
 
-The app was built with the game logic first and the DOM controller second. Each was written in pure javascript with no libaries or frameworks leaving the code hopefully cleaner and more efficent.
-
-The fundamentals are in place for game play with the all edge cases encountered for.
-
-Testing is exclusively done via unit tests with attempts at building custom matchers, using Zombie JS not working to a useful level. I additionally looking into using nightwatch for full end to end testing but the setup was prohitive in time for return. 
+The app was built with the game logic first and the DOM controller second. Each was written in pure javascript with no libaries or frameworks leaving the code easy to read without having to learn how a particuar framework operates.

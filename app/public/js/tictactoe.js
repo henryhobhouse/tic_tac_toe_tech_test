@@ -10,8 +10,8 @@ function TicTacToe () {
 
 // Controls player turn
 TicTacToe.prototype.playTurn = function(squareIndex) {
-  if (this.turnAvailable(squareIndex)) return;
-  this.changeState(squareIndex);
+  if (this.notAbleToPlay(squareIndex)) return;
+  this.updateSquareState(squareIndex);
   this.winner = this.winCombo.check(this.board.squares);
   this.swapPlayer();
 };
@@ -22,11 +22,12 @@ TicTacToe.prototype.swapPlayer = function() {
 };
 
 // updates state of square with whose turn it is
-TicTacToe.prototype.changeState = function(squareIndex) {
-  this.board.squares[squareIndex] = this.xIsNext ? 'X' : 'O';
+TicTacToe.prototype.updateSquareState = function(squareIndex) {
+  var newState = this.xIsNext ? 'X' : 'O';
+  this.board.updateSquare(squareIndex, newState);
 };
 
 // checks if game finished or square already used
-TicTacToe.prototype.turnAvailable = function(squareIndex) {
-  return this.board.squares[squareIndex] !== null || this.winner !== null;
+TicTacToe.prototype.notAbleToPlay = function(squareIndex) {
+  return this.board.getSquare(squareIndex) !== null || this.winner !== null;
 };

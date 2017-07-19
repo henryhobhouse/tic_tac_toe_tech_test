@@ -2,7 +2,7 @@
 
 // checks if winning combination of moves has occured
 function WinCombo() {
-  this.WIN_COMB = [
+  this.WINNING_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -15,8 +15,8 @@ function WinCombo() {
 }
 
 WinCombo.prototype.check = function(squares) {
-  for (let i = 0; i < this.WIN_COMB.length; i++) {
-    var [a, b, c] = this.WIN_COMB[i];
+  for (let i = 0; i < this.WINNING_COMBINATIONS.length; i++) {
+    var [a, b, c] = this.WINNING_COMBINATIONS[i];
     if(squares[a] === squares[b] &&
        squares[c] === squares[b] &&
        squares[a] !== null) {
