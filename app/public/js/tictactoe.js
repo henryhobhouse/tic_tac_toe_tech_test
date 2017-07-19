@@ -9,24 +9,24 @@ function TicTacToe () {
 }
 
 // Controls player turn
-TicTacToe.prototype.playTurn = function(sqr) {
-  if (this.turnAvailable(sqr)) return;
-  this.changeState(sqr);
+TicTacToe.prototype.playTurn = function(squareIndex) {
+  if (this.turnAvailable(squareIndex)) return;
+  this.changeState(squareIndex);
   this.winner = this.winCombo.check(this.board.squares);
   this.swapPlayer();
 };
 
 // Changes player go
 TicTacToe.prototype.swapPlayer = function() {
-  this.xIsNext = this.xIsNext === true ? false : true;
+  this.xIsNext = !this.xIsNext;
 };
 
-// updates state of square
-TicTacToe.prototype.changeState = function(sqr) {
-  this.board.squares[sqr] = this.xIsNext === true ? 'X' : 'O';
+// updates state of square with whose turn it is
+TicTacToe.prototype.changeState = function(squareIndex) {
+  this.board.squares[squareIndex] = this.xIsNext ? 'X' : 'O';
 };
 
-// checks if game finished
-TicTacToe.prototype.turnAvailable = function(sqr) {
-  return this.board.squares[sqr] !== null || this.winner !== null;
+// checks if game finished or square already used
+TicTacToe.prototype.turnAvailable = function(squareIndex) {
+  return this.board.squares[squareIndex] !== null || this.winner !== null;
 };

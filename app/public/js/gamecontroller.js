@@ -15,16 +15,16 @@ function ready(fn) {
 ready(function() {
   var squares =  document.querySelectorAll('.square');
   displayStatus();
-  window['squaresOnLoad'](squares);
+  squaresOnLoad(squares);
 });
 
 // listens for click on squares and updates content and status accordingly
 function squaresOnLoad(squares) {
   squares.forEach(function(element) {
     element.addEventListener('click', function(evt) {
-      var square_id = evt.target.dataset.id;
-      tictactoe.playTurn(square_id);
-      squares[square_id].innerHTML = tictactoe.board.squares[square_id];
+      var squareId = evt.target.dataset.id;
+      tictactoe.playTurn(squareId);
+      squares[squareId].innerHTML = tictactoe.board.squares[squareId];
       displayStatus();
     });
   });

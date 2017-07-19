@@ -24,15 +24,15 @@ describe("TicTacToe", function() {
     });
 
     it("'square' value in array changes to 'X' on first click", function() {
-      var square_test = 2;
-      ttt.changeState(square_test);
+      var squareTest = 2;
+      ttt.changeState(squareTest);
       expect(ttt.board.squares[2]).toEqual('X');
     });
 
     it("'square' value in array changes to 'X' on first click", function() {
-      var square_test = 2;
+      var squareTest = 2;
       ttt.swapPlayer();
-      ttt.changeState(square_test);
+      ttt.changeState(squareTest);
       expect(ttt.board.squares[2]).toEqual('O');
     });
 
